@@ -5,13 +5,13 @@ output_decomposition_path = "..\\data_sdp"
 list_generation = ["generation"]
 generation_files_path = "..\\data_ROPF"
 max_time = 600 #10 minutes
-network_name = "14nodes"
+network_name = "14nodes_disconnect"
 
-f = open("results_test_$(network_name)_v+-0.02_BB$(max_time).csv", "w")
+f = open("results_train_$(network_name)_v+-0.02_BB$(max_time).csv", "w")
 write(f, "Numero ; UB ; LB ; Gap (%)\n")
 for i in 0:2499
     # network_name, numero = split(instance_name, '-')
-    numero = "test_$i"
+    numero = "train_$i"
     instance_name = network_name*"-"*numero
     matpower_instance_path = "..\\mp_data\\$(network_name)\\$(numero).mat"
     for generation in list_generation
